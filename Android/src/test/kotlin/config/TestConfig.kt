@@ -1,4 +1,4 @@
-package tests.config
+package config
 
 import org.aeonbits.owner.Config
 import org.aeonbits.owner.Config.DefaultValue

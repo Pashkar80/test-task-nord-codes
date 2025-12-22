@@ -5,7 +5,6 @@ import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.WebDriverRunner
 import io.appium.java_client.android.AndroidDriver
 import org.openqa.selenium.MutableCapabilities
-import tests.driver.EmulatorDriver
 
 object DriverManager {
 

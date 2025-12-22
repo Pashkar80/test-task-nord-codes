@@ -1,4 +1,4 @@
-package tests.config
+package config
 
 internal data class EmulatorConfigData(
   var deviceName: String?,

@@ -1,7 +1,7 @@
 package provider
 
 import converter.DataConverter.resourceFileToObject
-import tests.config.EmulatorConfigData
+import config.EmulatorConfigData
 import kotlin.jvm.java
 
 internal class EmulatorConfigDataProvider {

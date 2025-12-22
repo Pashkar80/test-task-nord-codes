@@ -1,0 +1,11 @@
+Given: User with default credential
+When: User open app and 'Main' screen displayed
+And: User tap on burger-menu
+And: Tap on 'Log In' button
+And: Open login screen
+And: Input valid username in field 'username'
+And: Input valid password in field 'password'
+And: Tap button 'Login'
+And: User redirect on 'Main' screen
+Then: Title "PRODUCTS" displayed
+And: Burger-menu displayed
