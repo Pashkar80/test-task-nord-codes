@@ -2,7 +2,7 @@ package service
 
 import screen.LoginWidget
 
-internal class LoginScreenOperations {
+internal class LoginWidgetOperations {
   private val loginWidget by lazy { LoginWidget() }
 
   fun fillLoginFormAndSubmit(username: String, password: String) {

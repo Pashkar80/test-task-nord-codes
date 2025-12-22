@@ -5,3 +5,4 @@ appPackage: io.appium.android.apis
 appActivity: .ApiDemos
 remoteURL: http://192.168.56.1:4848/wd/hub
 app: src/test/resources/app/MyDemoApp.apk
+automationName: UiAutomator2

@@ -4,7 +4,7 @@ import io.qameta.allure.Step
 import screen.MainMenuBlock
 import screen.MainWidget
 
-internal class MainScreenOperations {
+internal class MainWidgetOperations {
   private val mainWidget by lazy { MainWidget() }
 
   @Step

@@ -3,14 +3,14 @@ package tests
 import config.UserConfigData
 import org.junit.jupiter.api.Test
 import provider.UserConfigDataProvider
-import service.ScreenOperations
+import service.WidgetOperations
 
 internal class LoginHappyPathTest : BaseTest() {
   private val userConfig: UserConfigData = UserConfigDataProvider().readUserConfigData()
 
   @Test
   fun `login happy path test`() {
-    ScreenOperations().apply {
+    WidgetOperations().apply {
       mainScreen.apply {
         verifyIsOnMainWidget()
         openLoginWidget()

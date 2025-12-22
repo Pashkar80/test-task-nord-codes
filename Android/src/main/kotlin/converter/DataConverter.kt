@@ -2,19 +2,23 @@ package converter
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.fasterxml.jackson.module.kotlin.KotlinFeature
+import com.fasterxml.jackson.module.kotlin.KotlinFeature.NullIsSameAsDefault
+import com.fasterxml.jackson.module.kotlin.KotlinFeature.NullToEmptyCollection
+import com.fasterxml.jackson.module.kotlin.KotlinFeature.NullToEmptyMap
+import com.fasterxml.jackson.module.kotlin.KotlinFeature.SingletonSupport
+import com.fasterxml.jackson.module.kotlin.KotlinFeature.StrictNullChecks
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 
-object DataConverter {
+internal object DataConverter {
 
   fun getKotlinModuleConfig(): KotlinModule {
     return KotlinModule.Builder()
       .withReflectionCacheSize(512)
-      .configure(KotlinFeature.NullToEmptyCollection, false)
-      .configure(KotlinFeature.NullToEmptyMap, false)
-      .configure(KotlinFeature.NullIsSameAsDefault, false)
-      .configure(KotlinFeature.SingletonSupport, false)
-      .configure(KotlinFeature.StrictNullChecks, false)
+      .configure(NullToEmptyCollection, false)
+      .configure(NullToEmptyMap, false)
+      .configure(NullIsSameAsDefault, false)
+      .configure(SingletonSupport, false)
+      .configure(StrictNullChecks, false)
       .build()
   }
 

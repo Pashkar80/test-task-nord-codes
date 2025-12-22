@@ -7,5 +7,6 @@ internal data class EmulatorConfigData(
   var appActivity: String?,
   var remoteURL: String?,
   var app: String?,
-  var version: String?
+  var version: String?,
+  var automationName: String?
 )
