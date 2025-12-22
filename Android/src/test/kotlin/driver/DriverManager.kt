@@ -6,7 +6,7 @@ import com.codeborne.selenide.WebDriverRunner
 import io.appium.java_client.android.AndroidDriver
 import org.openqa.selenium.MutableCapabilities
 
-object DriverManager {
+internal object DriverManager {
 
   fun initDriver(): AndroidDriver {
     Configuration.browser = EmulatorDriver::class.java.name

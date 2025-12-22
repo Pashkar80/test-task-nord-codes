@@ -13,7 +13,6 @@ internal abstract class BaseTest {
   protected lateinit var driver: AndroidDriver
 
   @BeforeAll
-
   fun setup() {
     driver = DriverManager.initDriver()
     WidgetsOperations().verifyStartApplicationWidgetOpened()
