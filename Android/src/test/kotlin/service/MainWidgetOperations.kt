@@ -1,8 +1,8 @@
 package service
 
 import io.qameta.allure.Step
-import screen.MainMenuBlock.mainMenuBlockButtonType.LOGIN
-import screen.MainWidget
+import widgets.MainMenuBlock.mainMenuBlockButtonType.LOGIN
+import widgets.MainWidget
 
 internal class MainWidgetOperations {
   private val mainPageTitle: String = "Products"

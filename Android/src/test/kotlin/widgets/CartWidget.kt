@@ -1,12 +1,11 @@
-package screen
+package widgets
 
-import com.codeborne.selenide.Selectors.byXpath
 import com.codeborne.selenide.Selenide.`$$`
-import domains.AndroidTagType.TEXT_VIEW_TAG
+import com.codeborne.selenide.appium.AppiumSelectors.byContentDescription
 import org.openqa.selenium.By
 
 internal class CartWidget : BaseWidget() {
-  private val itemLabelLocator: By = byXpath("//${TEXT_VIEW_TAG.layoutValue}[@content-desc='product label']")
+  private val itemLabelLocator: By = byContentDescription("product label")
 
   fun verifyIsOnCartWidget(title: String) {
     verifyWidgetTitle(title)

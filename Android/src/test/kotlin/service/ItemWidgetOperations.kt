@@ -1,7 +1,7 @@
 package service
 
 import io.qameta.allure.Step
-import screen.ItemWidget
+import widgets.ItemWidget
 
 internal class ItemWidgetOperations {
   private val itemWidget by lazy { ItemWidget() }

@@ -3,7 +3,7 @@ package service
 import config.UserConfigData
 import io.qameta.allure.Step
 import provider.UserConfigDataProvider
-import screen.LoginWidget
+import widgets.LoginWidget
 
 internal class LoginWidgetOperations {
   private val userConfig: UserConfigData = UserConfigDataProvider().readUserConfigData()

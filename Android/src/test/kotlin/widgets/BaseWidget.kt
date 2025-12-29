@@ -1,4 +1,4 @@
-package screen
+package widgets
 
 import com.codeborne.selenide.Condition
 import com.codeborne.selenide.appium.SelenideAppium.`$`

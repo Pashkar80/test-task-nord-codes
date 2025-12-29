@@ -4,7 +4,7 @@ import io.qameta.allure.Step
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 
-import screen.CartWidget
+import widgets.CartWidget
 
 internal class CartWidgetOperations {
   private val title: String = "My Cart"

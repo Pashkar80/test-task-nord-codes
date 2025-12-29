@@ -1,19 +1,18 @@
-package screen
+package widgets
 
-import com.codeborne.selenide.Condition
+import com.codeborne.selenide.Condition.visible
+import com.codeborne.selenide.appium.AppiumSelectors.byAttribute
+import com.codeborne.selenide.appium.AppiumSelectors.byContentDescription
 import com.codeborne.selenide.appium.SelenideAppium.`$`
-import com.codeborne.selenide.appium.SelenideAppium.`$x`
-import domains.AndroidTagType.TEXT_VIEW_TAG
-import domains.AndroidTagType.VIEW_GROUP_TAG
 import elements.AndroidLocators.textViewByText
 import elements.ButtonElement.tapButton
 import io.appium.java_client.AppiumBy.accessibilityId
+import org.openqa.selenium.By
 
 internal class MainWidget : BaseWidget() {
-  private val mainMenuButton = accessibilityId("open menu")
-  private val badgeButton = accessibilityId("cart badge")
-  private val badgeItemCountPattern: String =
-    "//${VIEW_GROUP_TAG.layoutValue}[@content-desc='cart badge']/${TEXT_VIEW_TAG.layoutValue}[@text='%s']"
+  private val mainMenuButton: By = accessibilityId("open menu")
+  private val badgeButton: By = accessibilityId("cart badge")
+  private val cartBadge: By = byContentDescription("cart badge")
   val mainMenuBlock by lazy { MainMenuBlock() }
 
   fun clickMenuButton() {
@@ -22,7 +21,7 @@ internal class MainWidget : BaseWidget() {
 
   fun verifyIsOnMainWidget(title: String) {
     verifyWidgetTitle(title)
-    `$`(mainMenuButton).shouldBe(Condition.visible)
+    `$`(mainMenuButton).shouldBe(visible)
   }
 
   fun clickOnItemByName(itemName: String) {
@@ -34,6 +33,6 @@ internal class MainWidget : BaseWidget() {
   }
 
   fun verifyItemCount(count: String) {
-    `$x`(badgeItemCountPattern.format(count)).shouldBe(Condition.visible)
+    `$`(cartBadge).`$`(byAttribute("text", count)).shouldBe(visible)
   }
 }
