@@ -1,0 +1,21 @@
+Given: Logged user
+And: Open Main widget
+And: Click on item title - "Sauce Labs Backpack"
+And: Redirect on Item widget
+And: Verify is on Item widget
+And: User click on button "ADD TO CART"
+And: Go back to catalog
+And: Click on item title - "Sauce Labs Fleece Jacket"
+And: Redirect on Item widget
+And: Verify is on Item widget
+And: User click on button "ADD TO CART"
+And: Go back to catalog
+And: Click on item title - "Sauce Labs Bike Light"
+And: Redirect on Item widget
+And: Verify is on Item widget
+And: User click on button "ADD TO CART"
+And: Verify that badge icon displayed - 3
+When: User click on badge icon
+Then: Redirect on Badge widget
+And: Verify on Badge widget
+And: Verify that all items displayed

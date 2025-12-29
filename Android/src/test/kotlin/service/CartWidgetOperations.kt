@@ -1,6 +1,9 @@
 package service
 
 import io.qameta.allure.Step
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+
 import screen.CartWidget
 
 internal class CartWidgetOperations {
@@ -13,10 +16,9 @@ internal class CartWidgetOperations {
   }
 
   @Step
-  fun verifyItemCountAndName(itemName: String, count: String) {
-    cartWidget.apply {
-      verifyItemName(itemName)
-      verifyItemCount(count)
-    }
+  fun verifyIsItemsDisplayed(expectedItems: List<String>) {
+    val actualItems : List<String> = cartWidget.getCartItemsNames()
+    assertEquals(expectedItems.size, actualItems.size, "Incorrect number of items")
+    assertTrue(actualItems.containsAll(expectedItems), "Not all items were found in the basket")
   }
 }

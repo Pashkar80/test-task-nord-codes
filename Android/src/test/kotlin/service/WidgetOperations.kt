@@ -1,5 +1,7 @@
 package service
 
+import com.codeborne.selenide.appium.SelenideAppium.back
+
 internal class WidgetOperations {
   val mainWidget by lazy { MainWidgetOperations() }
   val loginWidget by lazy { LoginWidgetOperations() }
@@ -11,6 +13,20 @@ internal class WidgetOperations {
     loginWidget.apply {
       fillLoginFormAutomatically()
       clickLoginButton()
+    }
+  }
+
+  fun addItemsToBadge(itemNames: List<String>) {
+    itemNames.forEachIndexed { index, itemName ->
+      mainWidget.openItemCardByName(itemName)
+      itemWidget.apply {
+        verifyIsOnItemWidget(itemName)
+        addItemToCart()
+      }
+      if (index < itemNames.size - 1) {
+        back()
+        mainWidget.verifyIsOnMainWidget()
+      }
     }
   }
 }

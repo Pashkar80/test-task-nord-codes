@@ -27,7 +27,6 @@ internal class MainWidget : BaseWidget() {
 
   fun clickOnItemByName(itemName: String) {
     tapButton(locator = textViewByText(itemName), shouldDisappear = false)
-    // TODO переделать на то чтобы подавать сюда список товаров просто для этого случая товар один
   }
 
   fun clickBadgeButton() {
