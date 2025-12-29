@@ -1,22 +1,36 @@
 package service
 
 import io.qameta.allure.Step
-import screen.MainMenuBlock
+import screen.MainMenuBlock.mainMenuBlockButtonType.LOGIN
 import screen.MainWidget
 
 internal class MainWidgetOperations {
+  private val mainPageTitle: String = "Products"
   private val mainWidget by lazy { MainWidget() }
 
   @Step
   fun openLoginWidget() {
     mainWidget.apply {
       clickMenuButton()
-      mainMenuBlock.clickMainMenuButtonByType(MainMenuBlock.mainMenuBlockButtonType.LOGIN)
+      mainMenuBlock.clickMainMenuButtonByType(LOGIN)
     }
   }
 
   @Step
   fun verifyIsOnMainWidget() {
-    mainWidget.verifyIsOnMainScreen()
+    mainWidget.verifyIsOnMainWidget(mainPageTitle)
+  }
+
+  @Step
+  fun openItemCardByName(itemName: String) {
+    mainWidget.clickOnItemByName(itemName)
+  }
+
+  @Step
+  fun verifyItemCountInBadgeAndOpenCartWidget(count: String) {
+    mainWidget.apply {
+      verifyItemCount(count)
+      clickBadgeButton()
+    }
   }
 }
