@@ -12,7 +12,7 @@ import org.openqa.selenium.By
 internal class MainWidget : BaseWidget() {
   private val mainMenuButton: By = accessibilityId("open menu")
   private val badgeButton: By = By.xpath("//${VIEW_GROUP_TAG.layoutValue}[@content-desc='cart badge']")
-  private val counterPattern: String = ".//${TEXT_VIEW_TAG.layoutValue}[@text='%s']"
+  private val itemCounterPattern: String = ".//${TEXT_VIEW_TAG.layoutValue}[@text='%s']"
   val mainMenuBlock by lazy { MainMenuBlock() }
 
   fun clickMenuButton() {
@@ -33,6 +33,6 @@ internal class MainWidget : BaseWidget() {
   }
 
   fun verifyItemCount(count: String) {
-    `$`(badgeButton).`$x`(counterPattern.format(count)).shouldBe(visible)
+    `$`(badgeButton).`$x`(itemCounterPattern.format(count)).shouldBe(visible)
   }
 }
