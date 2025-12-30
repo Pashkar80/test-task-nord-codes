@@ -2,10 +2,10 @@ package tests
 
 import org.junit.jupiter.api.Test
 import service.WidgetOperations
-import java.lang.Math.random
+import kotlin.random.Random.Default.nextLong
 
 internal class InvalidPasswordLoginTest : BaseTest() {
-  private val invalidPass : String = random().toString()
+  private val invalidPass: String = nextLong(1000000, 9999999).toString()
 
   @Test
   fun `verify impossible login with incorrect pass`() {
