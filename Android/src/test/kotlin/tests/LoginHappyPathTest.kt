@@ -12,7 +12,10 @@ internal class LoginHappyPathTest : BaseTest() {
         verifyIsOnMainWidget()
         openLoginWidget()
       }
-      loginWidget.fillLoginFormAndSubmit()
+      loginWidget.apply {
+        fillLoginFormAndSubmit()
+        clickLoginButton()
+      }
       mainWidget.verifyIsOnMainWidget()
     }
   }

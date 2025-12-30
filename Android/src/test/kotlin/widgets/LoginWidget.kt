@@ -1,6 +1,10 @@
 package widgets
 
+import com.codeborne.selenide.Condition.visible
+import com.codeborne.selenide.appium.SelenideAppium.`$`
 import domains.AndroidTagType.TEXT_VIEW_TAG
+import domains.ErrorMessageType
+import elements.AndroidLocators.byText
 import elements.ButtonElement.tapButton
 import elements.InputElement.setInputFieldWithSendKeys
 import io.appium.java_client.AppiumBy.accessibilityId
@@ -20,11 +24,15 @@ internal class LoginWidget {
     setInputFieldWithSendKeys(password, passwordField)
   }
 
-  fun clickLoginButton() {
-    tapButton(loginButton)
+  fun clickLoginButton(expectButtonToDisappear: Boolean = true ) {
+    tapButton(loginButton, shouldDisappear = expectButtonToDisappear)
   }
 
   fun clickDefaultCredentialLocator() {
     tapButton(locator = defaultCredentialLocator, shouldDisappear = false)
+  }
+
+  fun verifyErrorMessage(message: ErrorMessageType) {
+    `$`(byText(message.message)).shouldBe(visible)
   }
 }

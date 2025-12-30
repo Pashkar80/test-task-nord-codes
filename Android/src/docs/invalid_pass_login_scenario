@@ -1,12 +1,10 @@
-Given: User with default credential
+Given: User with invalid credential
 When: User open app
 And: Verify is on Main widget
 And: User tap on burger-menu
 And: Tap on 'Log In' button
 And: Verify is on Login widget
 And: Input valid username in field 'username'
-And: Input valid password in field 'password'
+And: Input invalid password in field 'password'
 And: Tap button 'Login'
-And: User redirect on 'Main' screen
-Then: Title "PRODUCTS" displayed
-And: Burger-menu displayed
+Then: Verify error message : "Provided credentials do not match any user in this service." displayed
