@@ -1,5 +1,3 @@
-
-
 plugins {
   kotlin("jvm") version "1.9.0"
   id("java")
@@ -17,9 +15,10 @@ val allureVersion = "2.24.0"
 val junitVersion = "5.10.0"
 val slf4jVersion = "2.0.6"
 val jacksonVersion = "2.16.1"
-val selenideVersion = "7.0.4"
+val selenideVersion = "7.2.0"
 val seleniumVersion = "4.16.1"
 val appiumJavaVersion = "9.0.0"
+val log4jVersion = "2.20.0"
 
 dependencies {
   implementation(kotlin("stdlib"))
@@ -43,6 +42,9 @@ dependencies {
   implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:$jacksonVersion")
   implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
   implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
+  implementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
+  implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
+  implementation("org.apache.logging.log4j:log4j-slf4j2-impl:$log4jVersion")
 }
 
 tasks.test {

@@ -13,6 +13,7 @@ internal class LoginHappyPathTest : BaseTest() {
         openLoginWidget()
       }
       loginWidget.apply {
+        verifyIsOnLoginWidget()
         fillLoginFormAndSubmit()
         clickLoginButton()
       }

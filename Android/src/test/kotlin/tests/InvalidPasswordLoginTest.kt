@@ -15,6 +15,7 @@ internal class InvalidPasswordLoginTest : BaseTest() {
         openLoginWidget()
       }
       loginWidget.apply {
+        verifyIsOnLoginWidget()
         fillLoginFormAndSubmit(pass = invalidPass)
         clickLoginButton(false)
         verifyErrorMessageFromIncorrectLogin()

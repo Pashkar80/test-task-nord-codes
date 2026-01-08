@@ -2,12 +2,11 @@ package tests
 
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
+import service.CommonOperations.getRandomUniqueItems
 import service.WidgetOperations
 
-internal class AddItemsTest : BaseTest() {
-  private val items: List<String> = listOf(
-    "Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Fleece Jacket"
-  )
+internal class AddUniqueItemsTest : BaseTest() {
+  private val items: List<String> = getRandomUniqueItems(3)
   private lateinit var widgetOperation: WidgetOperations
 
   @BeforeAll
@@ -18,10 +17,13 @@ internal class AddItemsTest : BaseTest() {
   }
 
   @Test
-  fun `verify adding items`() {
-    widgetOperation.apply {
+  fun `verify unique adding items`() {
+    WidgetOperations().apply {
       addItemsToBadge(items)
-      mainWidget.verifyItemCountInBadgeAndOpenCartWidget(items.size.toString())
+      mainWidget.apply {
+        verifyItemCountInBadge(items.size.toString())
+        openCartWidget()
+      }
       cartWidget.apply {
         verifyIsOnCartWidget()
         verifyIsItemsDisplayed(items)
