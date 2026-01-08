@@ -22,7 +22,7 @@ internal class PaymentWidget : BaseWidget() {
     tapButton(reviewOrderButton, shouldDisappear = false)
   }
 
-  internal enum class PaymentFieldType(override val title: String) : FieldType {
+  internal enum class PaymentFieldType(override val title: String) : WidgetFieldType {
     FULL_NAME("Full Name"),
     CARD_NUMBER("Card Number"),
     EXPIRATION_DATE("Expiration Date"),

@@ -18,7 +18,7 @@ internal class AddUniqueItemsTest : BaseTest() {
 
   @Test
   fun `verify unique adding items`() {
-    WidgetOperations().apply {
+    widgetOperation.apply {
       addItemsToBadge(items)
       mainWidget.apply {
         verifyItemCountInBadge(items.size.toString())

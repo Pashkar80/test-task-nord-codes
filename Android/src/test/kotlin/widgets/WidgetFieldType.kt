@@ -1,5 +1,5 @@
 package widgets
 
-internal interface FieldType {
+internal interface WidgetFieldType {
   val title: String
 }

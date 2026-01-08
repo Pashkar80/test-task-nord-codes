@@ -7,7 +7,7 @@ import provider.UserConfigDataProvider
 import service.CommonOperations.getRandomUniqueItems
 import service.WidgetOperations
 
-internal class OrderTest : BaseTest() {
+internal class PurchaseFlowTest : BaseTest() {
   private val items: List<String> = getRandomUniqueItems(1)
   private val userConfig: UserConfigData = UserConfigDataProvider().readUserConfigData()
   private lateinit var widgetOperation: WidgetOperations
@@ -27,7 +27,7 @@ internal class OrderTest : BaseTest() {
   }
 
   @Test
-  fun `verify order`() {
+  fun `verify full checkout process`() {
     widgetOperation.apply {
       checkoutWidget.apply {
         verifyIsOnCheckoutWidget()

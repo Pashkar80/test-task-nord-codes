@@ -22,7 +22,7 @@ internal class CheckoutWidget : BaseWidget() {
     tapButton(paymentButton)
   }
 
-  internal enum class CheckoutFieldType(override val title: String) : FieldType {
+  internal enum class CheckoutFieldType(override val title: String) : WidgetFieldType {
     FULL_NAME("Full Name"),
     ADDRESS_LINE("Address Line 1"),
     CITY("City"),
