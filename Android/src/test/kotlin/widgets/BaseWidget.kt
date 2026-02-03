@@ -15,7 +15,10 @@ internal abstract class BaseWidget {
     `$`(byText(title)).shouldBe(Condition.visible)
   }
 
-  protected fun fillFieldByType(data: String, widgetFieldType: WidgetFieldType) {
-    setInputFieldWithSendKeys(data, `$x`(checkoutFieldPattern.format(widgetFieldType.title)))
+  protected fun fillFieldByType(data: String, widgetFieldType: WidgetFieldType, shouldScrollTo: Boolean = true) {
+    setInputFieldWithSendKeys(
+      data,
+      `$x`(checkoutFieldPattern.format(widgetFieldType.title)),
+      shouldScrollTo)
   }
 }
