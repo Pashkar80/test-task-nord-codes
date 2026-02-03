@@ -10,11 +10,16 @@ import elements.InputElement.setInputFieldWithSendKeys
 import io.appium.java_client.AppiumBy.accessibilityId
 import org.openqa.selenium.By
 
-internal class LoginWidget {
+internal class LoginWidget : BaseWidget() {
   private val usernameField: By = accessibilityId("Username input field")
   private val passwordField: By = accessibilityId("Password input field")
   private val loginButton: By = accessibilityId("Login button")
   private val defaultCredentialLocator: By = By.xpath("//${TEXT_VIEW_TAG.layoutValue}[contains(@text, 'bob')]")
+
+  fun verifyIsOnLoginWidget(title: String) {
+    verifyWidgetTitle(title)
+    `$`(loginButton).shouldBe(visible)
+  }
 
   fun inputUsernameField(username: String) {
     setInputFieldWithSendKeys(username, usernameField)
@@ -24,7 +29,7 @@ internal class LoginWidget {
     setInputFieldWithSendKeys(password, passwordField)
   }
 
-  fun clickLoginButton(expectButtonToDisappear: Boolean = true ) {
+  fun clickLoginButton(expectButtonToDisappear: Boolean = true) {
     tapButton(loginButton, shouldDisappear = expectButtonToDisappear)
   }
 

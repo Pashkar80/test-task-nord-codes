@@ -7,11 +7,15 @@ import org.openqa.selenium.By
 
 internal object InputElement {
 
-  fun setInputFieldWithSendKeys(value: String?, element: SelenideElement) {
+  fun setInputFieldWithSendKeys(
+    value: String?,
+    element: SelenideElement,
+    shouldScrollTo: Boolean = false
+  ) {
     value?.let { inputValue ->
       element.apply {
-        shouldBe(Condition.visible).click() // to investigate
-        clear()
+        if (shouldScrollTo) scrollTo()
+        shouldBe(Condition.visible).click()
         sendKeys(inputValue)
       }
     }
