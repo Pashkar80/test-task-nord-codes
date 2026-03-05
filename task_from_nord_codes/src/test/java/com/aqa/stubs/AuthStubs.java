@@ -1,10 +1,10 @@
-package com.aqa.utils.stubs;
+package com.aqa.stubs;
 
 import static com.aqa.config.StubsConfig.ACCEPT_HEADER;
 import static com.aqa.config.StubsConfig.ACCEPT_VALUE;
+import static com.aqa.config.StubsConfig.AUTH_URL;
 import static com.aqa.config.StubsConfig.CONTENT_TYPE_HEADER;
 import static com.aqa.config.StubsConfig.CONTENT_TYPE_VALUE;
-import static com.aqa.config.StubsConfig.DO_ACTION_URL;
 import static com.aqa.config.StubsConfig.RESPONSE_CONTENT_TYPE;
 import static com.aqa.config.StubsConfig.STATUS_OK;
 import static com.aqa.config.StubsConfig.TOKEN_PARAM;
@@ -17,18 +17,19 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.MappingBuilder;
 import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
 
-public class ActionStubs {
+public class AuthStubs {
 
-  private ActionStubs() {}
+  private AuthStubs() {
+  }
 
-  public static void stubActionSuccess(WireMockServer server, String token) {
-    server.stubFor(createBaseActionStub(token)
+  public static void stubAuthSuccess(WireMockServer server, String token) {
+    server.stubFor(createBaseAuthStub(token)
         .willReturn(createBaseResponse(STATUS_OK)
             .withBody("{\"result\": \"OK\"}")));
   }
 
-  private static MappingBuilder createBaseActionStub(String token) {
-    return post(urlEqualTo(DO_ACTION_URL))
+  private static MappingBuilder createBaseAuthStub(String token) {
+    return post(urlEqualTo(AUTH_URL))
         .withHeader(CONTENT_TYPE_HEADER, containing(CONTENT_TYPE_VALUE))
         .withHeader(ACCEPT_HEADER, containing(ACCEPT_VALUE))
         .withRequestBody(containing(TOKEN_PARAM + token));

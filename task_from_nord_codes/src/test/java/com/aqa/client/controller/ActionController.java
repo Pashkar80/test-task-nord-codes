@@ -19,7 +19,7 @@ public class ActionController {
         .withToken(token)
         .withAction(ACTION)
         .build()
-        .post(service.getLoginEndpoint());
+        .post(service.getEndpoint());
   }
 
   public AppResponse sendActionRequestAndGetResponse(String token) {
@@ -27,7 +27,7 @@ public class ActionController {
         .withToken(token)
         .withAction(ACTION)
         .build()
-        .post(service.getLoginEndpoint())
+        .post(service.getEndpoint())
         .then()
         .extract()
         .as(AppResponse.class);

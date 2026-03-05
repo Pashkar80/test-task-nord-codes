@@ -21,7 +21,7 @@ public class LoginController {
         .withToken(token)
         .withAction(LOGIN)
         .build()
-        .post(service.getLoginEndpoint());
+        .post(service.getEndpoint());
   }
 
   public AppResponse sendLoginRequestAndGetRequest(String token) {
@@ -29,7 +29,7 @@ public class LoginController {
         .withToken(token)
         .withAction(LOGIN)
         .build()
-        .post(service.getLoginEndpoint())
+        .post(service.getEndpoint())
         .then()
         .extract()
         .as(AppResponse.class);
@@ -40,7 +40,7 @@ public class LoginController {
         .withToken(token)
         .withAction(LOGIN)
         .build()
-        .post(service.getLoginEndpoint())
+        .post(service.getEndpoint())
         .then()
         .extract()
         .as(AppResponse.class);

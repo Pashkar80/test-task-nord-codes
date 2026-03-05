@@ -19,7 +19,7 @@ public class LogoutController {
         .withToken(token)
         .withAction(LOGOUT)
         .build()
-        .post(service.getLoginEndpoint());
+        .post(service.getEndpoint());
   }
 
   public AppResponse sendLogoutRequestAndGetResponse(String token) {
@@ -27,7 +27,7 @@ public class LogoutController {
         .withToken(token)
         .withAction(LOGOUT)
         .build()
-        .post(service.getLoginEndpoint())
+        .post(service.getEndpoint())
         .then()
         .extract()
         .as(AppResponse.class);

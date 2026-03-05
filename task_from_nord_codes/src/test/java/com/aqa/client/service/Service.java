@@ -5,7 +5,7 @@ import static com.aqa.config.TestConfig.ENDPOINT;
 
 public class Service {
 
-  public String getLoginEndpoint() {
+  public String getEndpoint() {
     return BASE_URL + ENDPOINT;
   }
 }

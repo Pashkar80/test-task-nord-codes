@@ -3,7 +3,7 @@ package com.aqa.tests.logout;
 import com.aqa.services.LogoutOperations;
 import com.aqa.tests.BaseTest;
 import com.aqa.utils.TokenGenerator;
-import com.aqa.utils.stubs.ActionStubs;
+import com.aqa.stubs.ActionStubs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

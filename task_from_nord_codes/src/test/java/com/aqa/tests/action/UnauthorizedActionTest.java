@@ -3,7 +3,7 @@ package com.aqa.tests.action;
 import com.aqa.services.ActionOperations;
 import com.aqa.tests.BaseTest;
 import com.aqa.utils.TokenGenerator;
-import com.aqa.utils.stubs.ActionStubs;
+import com.aqa.stubs.ActionStubs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
