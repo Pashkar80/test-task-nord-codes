@@ -21,7 +21,7 @@ class ImpossibleDuplicateLogoutTest extends BaseTest {
     AuthStubs.stubAuthSuccess(wireMockServer, token);
     ActionStubs.stubActionSuccess(wireMockServer, token);
     LoginOperations loginOperations = new LoginOperations(service, requestSpec);
-    logoutOperations = new LogoutOperations(service, requestSpec);
+    logoutOperations = new LogoutOperations(service);
     loginOperations.loginUser(token);
   }
 

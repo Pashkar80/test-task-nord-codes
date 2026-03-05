@@ -18,12 +18,11 @@ class LoginWrongApiKeyTest extends BaseTest {
 
   private String token = TokenGenerator.generateValidToken();
   private String wrongApiKey = TokenGenerator.generateToken(9);
-  private RequestSpecification customSpec;
   LoginOperations loginOperations;
 
   @BeforeEach
   void getCustomSpec() {
-    customSpec = RestAssured.given()
+    RequestSpecification customSpec = RestAssured.given()
         .contentType(URLENC)
         .accept(JSON)
         .header("X-Api-Key", wrongApiKey)

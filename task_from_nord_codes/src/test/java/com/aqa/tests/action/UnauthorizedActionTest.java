@@ -17,7 +17,7 @@ class UnauthorizedActionTest extends BaseTest {
   @BeforeEach
   void setUpStub() {
     ActionStubs.stubActionSuccess(wireMockServer, token);
-    actionOperations = new ActionOperations(service, requestSpec);
+    actionOperations = new ActionOperations(service);
   }
 
   @Test

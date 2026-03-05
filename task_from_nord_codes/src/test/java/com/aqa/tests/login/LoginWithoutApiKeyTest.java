@@ -16,12 +16,11 @@ import org.junit.jupiter.api.Test;
 class LoginWithoutApiKeyTest extends BaseTest {
 
   private String token = TokenGenerator.generateValidToken();
-  private RequestSpecification customSpec;
   LoginOperations loginOperations;
 
   @BeforeEach
   void getCustomSpec() {
-    customSpec = RestAssured.given()
+    RequestSpecification customSpec = RestAssured.given()
         .contentType(URLENC)
         .basePath(ENDPOINT);
     loginOperations = new LoginOperations(service, customSpec);

@@ -21,8 +21,8 @@ class ImpossibleActionAfterLogoutTest extends BaseTest {
   void setUpStubsLoginAndLogout() {
     AuthStubs.stubAuthSuccess(wireMockServer, token);
     ActionStubs.stubActionSuccess(wireMockServer, token);
-    actionOperations = new ActionOperations(service, requestSpec);
-    LogoutOperations logoutOperations = new LogoutOperations(service, requestSpec);
+    actionOperations = new ActionOperations(service);
+    LogoutOperations logoutOperations = new LogoutOperations(service);
     LoginOperations loginOperations = new LoginOperations(service, requestSpec);
     loginOperations.loginUser(token);
     logoutOperations.logoutUser(token);

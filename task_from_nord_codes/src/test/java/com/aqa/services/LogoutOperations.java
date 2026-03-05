@@ -15,8 +15,8 @@ public class LogoutOperations {
 
   public LogoutController controller;
 
-  public LogoutOperations(Service service, RequestSpecification requestSpec) {
-    this.controller = new LogoutController(service, requestSpec);
+  public LogoutOperations(Service service) {
+    this.controller = new LogoutController(service);
   }
 
   @Step

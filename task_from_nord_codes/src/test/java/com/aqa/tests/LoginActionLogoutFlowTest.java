@@ -20,8 +20,8 @@ class LoginActionLogoutFlowTest extends BaseTest {
     AuthStubs.stubAuthSuccess(wireMockServer, token);
     ActionStubs.stubActionSuccess(wireMockServer, token);
     LoginOperations loginOperations = new LoginOperations(service, requestSpec);
-    ActionOperations actionOperations = new ActionOperations(service, requestSpec);
-    logoutOperations = new LogoutOperations(service, requestSpec);
+    ActionOperations actionOperations = new ActionOperations(service);
+    logoutOperations = new LogoutOperations(service);
     loginOperations.loginUser(token);
     actionOperations.actionUser(token);
   }

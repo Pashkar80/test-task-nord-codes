@@ -2,19 +2,16 @@ package com.aqa.client.controller;
 
 import static com.aqa.config.TestConfig.ACTION;
 
-import com.aqa.client.service.Service;
 import com.aqa.client.builder.RequestBuilder;
 import com.aqa.client.model.AppResponse;
-import io.restassured.specification.RequestSpecification;
+import com.aqa.client.service.Service;
 
 public class ActionController {
 
   private Service service;
-  private RequestSpecification requestSpec;
 
-  public ActionController(Service service, RequestSpecification requestSpec) {
+  public ActionController(Service service) {
     this.service = service;
-    this.requestSpec = requestSpec;
   }
 
   public void sendActionRequest(String token) {

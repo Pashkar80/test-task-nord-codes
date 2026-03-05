@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
- class ActionWithNonStoredTokenTest extends BaseTest {
+class ActionWithNonStoredTokenTest extends BaseTest {
 
   private String token = TokenGenerator.generateValidToken();
   private String newToken = TokenGenerator.generateValidToken();
@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
     AuthStubs.stubAuthSuccess(wireMockServer, token);
     ActionStubs.stubActionSuccess(wireMockServer, token);
     LoginOperations loginOperations = new LoginOperations(service, requestSpec);
-    actionOperations = new ActionOperations(service, requestSpec);
+    actionOperations = new ActionOperations(service);
     loginOperations.loginUser(token);
   }
 

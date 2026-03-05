@@ -5,16 +5,13 @@ import static com.aqa.config.TestConfig.LOGOUT;
 import com.aqa.client.builder.RequestBuilder;
 import com.aqa.client.model.AppResponse;
 import com.aqa.client.service.Service;
-import io.restassured.specification.RequestSpecification;
 
 public class LogoutController {
 
   private Service service;
-  private RequestSpecification requestSpec;
 
-  public LogoutController(Service service, RequestSpecification requestSpec) {
+  public LogoutController(Service service) {
     this.service = service;
-    this.requestSpec = requestSpec;
   }
 
   public void sendLogoutRequest(String token) {

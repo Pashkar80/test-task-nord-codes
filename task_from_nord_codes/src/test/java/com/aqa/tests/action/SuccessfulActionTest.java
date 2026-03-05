@@ -20,7 +20,7 @@ class SuccessfulActionTest extends BaseTest {
     AuthStubs.stubAuthSuccess(wireMockServer, token);
     ActionStubs.stubActionSuccess(wireMockServer, token);
     LoginOperations loginOperations = new LoginOperations(service, requestSpec);
-    actionOperations = new ActionOperations(service, requestSpec);
+    actionOperations = new ActionOperations(service);
     loginOperations.loginUser(token);
   }
 

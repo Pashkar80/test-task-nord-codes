@@ -5,9 +5,9 @@ import static com.aqa.config.TestConfig.OK;
 import static com.aqa.logger.Logger.info;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.aqa.client.service.Service;
 import com.aqa.client.controller.LoginController;
 import com.aqa.client.model.AppResponse;
+import com.aqa.client.service.Service;
 import io.qameta.allure.Step;
 import io.restassured.specification.RequestSpecification;
 

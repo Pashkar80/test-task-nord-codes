@@ -15,8 +15,8 @@ public class ActionOperations {
 
   public ActionController controller;
 
-  public ActionOperations(Service service, RequestSpecification requestSpec) {
-    this.controller = new ActionController(service, requestSpec);
+  public ActionOperations(Service service) {
+    this.controller = new ActionController(service);
   }
 
   @Step

@@ -17,7 +17,7 @@ class ImpossibleLogoutWithoutLoginTest extends BaseTest {
   @BeforeEach
   void setUpStub() {
     ActionStubs.stubActionSuccess(wireMockServer, token);
-    logoutOperations = new LogoutOperations(service, requestSpec);
+    logoutOperations = new LogoutOperations(service);
   }
 
   @Test

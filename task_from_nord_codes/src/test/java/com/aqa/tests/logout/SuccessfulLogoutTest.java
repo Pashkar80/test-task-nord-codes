@@ -21,7 +21,7 @@ class SuccessfulLogoutTest extends BaseTest {
     AuthStubs.stubAuthSuccess(wireMockServer, token);
     ActionStubs.stubActionSuccess(wireMockServer, token);
     loginOperations = new LoginOperations(service, requestSpec);
-    logoutOperations = new LogoutOperations(service, requestSpec);
+    logoutOperations = new LogoutOperations(service);
     loginOperations.loginUser(token);
   }
 

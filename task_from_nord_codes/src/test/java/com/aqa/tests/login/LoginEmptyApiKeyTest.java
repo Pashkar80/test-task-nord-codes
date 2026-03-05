@@ -18,12 +18,11 @@ class LoginEmptyApiKeyTest extends BaseTest {
 
   private String token = TokenGenerator.generateValidToken();
   private String emptyApiKey = "";
-  private RequestSpecification customSpec;
   private LoginOperations loginOperations;
 
   @BeforeEach
   void getCustomSpec() {
-    customSpec = RestAssured.given()
+    RequestSpecification customSpec = RestAssured.given()
         .contentType(URLENC)
         .accept(JSON)
         .header("X-Api-Key", emptyApiKey)
