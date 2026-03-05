@@ -3,7 +3,7 @@ package com.aqa.config;
 public class TestConfig {
   public static final String BASE_URL = "http://localhost:8080";
   public static final String ENDPOINT = "/endpoint";
-  public static final String API_KEY = "qazWSXedc";
+  public static final String API_KEY = "";
   public static final int MOCK_PORT = 8890;
   public static final String LOGIN = "LOGIN";
   public static final String ACTION = "ACTION";

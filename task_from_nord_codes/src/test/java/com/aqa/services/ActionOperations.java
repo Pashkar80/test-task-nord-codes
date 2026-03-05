@@ -5,11 +5,10 @@ import static com.aqa.config.TestConfig.OK;
 import static com.aqa.logger.Logger.info;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.aqa.client.service.Service;
 import com.aqa.client.controller.ActionController;
 import com.aqa.client.model.AppResponse;
+import com.aqa.client.service.Service;
 import io.qameta.allure.Step;
-import io.restassured.specification.RequestSpecification;
 
 public class ActionOperations {
 
@@ -34,7 +33,7 @@ public class ActionOperations {
 
   @Step
   public void sendActionRequestAndVerifyResponseData(String token, String message) {
-    info("Verify field result and message in response from login request");
+    info("Verify field result and message in response from action request");
     AppResponse response = controller.sendActionRequestAndGetResponse(token);
     assertEquals(ERROR, response.result(),
         "Expected result doesn't match actual - " + response.result());
